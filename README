@@ -1,0 +1,35 @@
+
+Mine8088 is a version of Minesweeper for the IBM PC. It only requires an
+8088/8086 CPU, a MDA/CGA card (or compatible later card) and a modest amount
+of RAM (exact amount not established, but even 64 KB RAM should be enough;
+the game .COM is only about 2.5 KB).
+
+Currently DOS is required for some functionality, but the core game works
+without using any DOS functions.
+
+Supported game features:
+* Basic minesweeper gameplay (randomized mines, moving around, flagging)
+* Beginner, intermediate and expert modes like on Windows
+* Custom mode (up to 80x24 on 80-column display)
+* Marks (?)
+* Timer
+* Mine counter
+* Chording (try to reveal an already open tile with the correct number of
+  flags around it to chord)
+
+To build, simply assemble DOSMINE.ASM with NASM into a .COM file. By default,
+a 80-column CGA version will be built. To build a 40 column version, modify
+the .ASM file and set COLUMNS to 40. To build a MDA version, set MDA to 1.
+
+Controls are listed in the intro:
+* Arrow keys move
+* [Space] Reveal/Chord
+* [F]lag [M]ark [R]estart
+* [Q]uit (or [ESC])
+
+Caveats:
+* While CGA/MDA compatible, Mine8088 does not make any attempt to prevent
+  "snow" artifacts when updating the screen.
+* Timer is not forgiving for slower systems where revealing tiles may
+  take some time.
+
